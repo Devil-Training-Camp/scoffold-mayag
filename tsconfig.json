@@ -1,0 +1,36 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "sourceMap": false,
+    "noEmit": false,
+    "noEmitHelpers": false,
+    "importHelpers": false,
+    "strictNullChecks": false,
+    "resolveJsonModule": true,
+    "allowUnreachableCode": true,
+    "lib": ["es6", "dom"],
+    "typeRoots": ["./node_modules/@types"],
+    "outDir": "./build", // 重定向输出目录
+    "types": ["node"]
+  },
+  "exclude": [
+    // 不参与打包的目录
+    "node_modules",
+    "build",
+    "**/*.test.ts",
+    "temp",
+    "scripts",
+    "./src/__tests__"
+  ],
+  "esModuleInterop": true,
+  "allowSyntheticDefaultImports": true,
+  "compileOnSave": false,
+  "buildOnSave": false
+}

@@ -1,0 +1,61 @@
+{
+  "name": "scoffold-mayag",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build",
+  "bin": {
+    "scm": "bin/index.js",
+    "scm-local": "bin/local.js"
+  },
+  "scripts": {
+    "clear": "rimraf ./build",
+    "build": "pnpm run clear && tsc",
+    "lint": "eslint --ext .ts ./src",
+    "prepare": "husky install"
+  },
+  "files": [
+    "build"
+  ],
+  "keywords": [
+    "scaffold",
+    "scaffolding",
+    "cli",
+    "typescript"
+  ],
+  "author": "mayang",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.3",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.0.0",
+    "figlet": "^1.6.0",
+    "fs-extra": "10",
+    "inquirer": "8",
+    "ora": "^5.4.1",
+    "validate-npm-package-name": "^5.0.0"
+  }
+}
